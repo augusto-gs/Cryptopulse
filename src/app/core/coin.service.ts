@@ -9,7 +9,7 @@ import { coins } from '../data/coins';
 export class CoinService {
   public coins$ = new BehaviorSubject<CoinStructure[]>([]);
 
-  public loadCharacters(): void {
+  public loadCoins(): void {
     this.coins$.next(coins);
   }
 }

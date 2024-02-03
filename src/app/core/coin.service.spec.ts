@@ -13,7 +13,7 @@ describe('Given a CoinService', () => {
 
   describe('When it calls its loadCharacters method', () => {
     it('Then it should change the coins$ variable', () => {
-      service.loadCharacters();
+      service.loadCoins();
       expect(service.coins$.getValue()).toBe(coins);
     });
   });
