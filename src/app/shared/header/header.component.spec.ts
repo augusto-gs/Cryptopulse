@@ -6,7 +6,7 @@ import { By } from '@angular/platform-browser';
 describe('Given a Header component', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
-  let el: DebugElement;
+  let element: DebugElement;
 
   describe('When it is rendered on screen', () => {
     beforeEach(() => {
@@ -16,7 +16,7 @@ describe('Given a Header component', () => {
 
       fixture = TestBed.createComponent(HeaderComponent);
       component = fixture.componentInstance;
-      el = fixture.debugElement;
+      element = fixture.debugElement;
       fixture.detectChanges();
     });
 
@@ -25,7 +25,7 @@ describe('Given a Header component', () => {
     });
 
     it("Should show an img with an alternative text 'Cryptopulse logo'", () => {
-      const logoImage = el.query(By.css('img'));
+      const logoImage = element.query(By.css('img'));
 
       expect(logoImage.nativeElement.alt).toBe('Cryptopulse logo');
     });
