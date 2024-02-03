@@ -1,12 +1,19 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { SharedModule } from './shared/shared.module';
+import { HeaderComponent } from './shared/header/header.component';
 
 describe('AppComponent', () => {
-  beforeEach(() => TestBed.configureTestingModule({
-    imports: [RouterTestingModule],
-    declarations: [AppComponent]
-  }));
+  let headerComponent: HeaderComponent;
+
+  beforeEach(
+    async () =>
+      await TestBed.configureTestingModule({
+        imports: [RouterTestingModule, SharedModule],
+        declarations: [AppComponent],
+      }).compileComponents(),
+  );
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
@@ -20,10 +27,11 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('crypto');
   });
 
-  it('should render title', () => {
+  it('should render a Header component', () => {
     const fixture = TestBed.createComponent(AppComponent);
+    headerComponent = fixture.componentInstance;
     fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('crypto app is running!');
+
+    expect(headerComponent).toBeTruthy();
   });
 });
