@@ -13,3 +13,14 @@ export class CoinService {
     this.coins$.next(coins);
   }
 }
+const number = (number1: number, number2: number) => {
+  number1 * number2;
+};
+
+number(2, 2);
+
+const cosas = [1, 2];
+
+cosas.forEach((number) => {
+  number * 2;
+});

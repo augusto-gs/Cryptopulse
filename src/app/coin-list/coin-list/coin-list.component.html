@@ -1,5 +1,5 @@
 <ul class="coin-list">
   <li class="coin-list__element" *ngFor="let coin of coins">
-    {{coin.name}}
+    <cr-coin [coin]="coin"></cr-coin>
   </li>
 </ul>
