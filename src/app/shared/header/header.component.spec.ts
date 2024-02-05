@@ -15,8 +15,10 @@ describe('Given a Header component', () => {
       });
 
       fixture = TestBed.createComponent(HeaderComponent);
+
       component = fixture.componentInstance;
       element = fixture.debugElement;
+
       fixture.detectChanges();
     });
 

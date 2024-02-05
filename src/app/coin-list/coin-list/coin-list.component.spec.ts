@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CoinListComponent } from './coin-list.component';
+import { CoinComponent } from '../coin/coin.component';
+import { CapitalizePipe } from 'src/app/shared/pipes/capitalize.pipe';
 
 describe('CoinListComponent', () => {
   let component: CoinListComponent;
@@ -8,7 +10,7 @@ describe('CoinListComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CoinListComponent],
+      declarations: [CoinListComponent, CoinComponent, CapitalizePipe],
     });
     fixture = TestBed.createComponent(CoinListComponent);
     component = fixture.componentInstance;

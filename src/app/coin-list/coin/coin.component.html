@@ -1,0 +1,10 @@
+<article class="coin">
+  <div class="coin__logo-container">
+    <img src={{coin.image}} alt="Image of {{coin.name}}" class="coin__image" width="40px" height="40px">
+    <span class="coin__symbol">{{coin.symbol | capitalize}}</span>
+  </div>
+  <div class="coin__info-container">
+    <span class="coin__name">{{coin.name}}</span>
+    <span class="coin__price">$ {{coin.currentPrice}}</span>
+  </div>
+</article>
