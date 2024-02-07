@@ -33,7 +33,7 @@ describe('Given a button Component', () => {
     });
 
     it('And you click the button then the function onClick should be called', fakeAsync(() => {
-      spyOn(component, 'onClick');
+      spyOn(component.userClick, 'emit');
 
       const button = element.nativeElement.querySelector('button');
 
@@ -41,7 +41,7 @@ describe('Given a button Component', () => {
 
       tick();
 
-      expect(component.onClick).toHaveBeenCalled();
+      expect(component.userClick.emit).toHaveBeenCalled();
     }));
 
     it('And it is given a class modifier then the class should be reflected', () => {
