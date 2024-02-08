@@ -1,0 +1,14 @@
+@import "@fontsource/ibm-plex-mono";
+
+.buy--button {
+  width: 250px;
+  height: 52px;
+  border-radius: 33px;
+  border: none;
+  margin-top: 20px;
+  color: #fff;
+  font:
+    bold 16px "IBM Plex Mono",
+    serif;
+  background: linear-gradient(45deg, #f239a4, #dc08e9);
+}
