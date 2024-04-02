@@ -1,9 +1,9 @@
 <article class="coin">
-  <img src="" alt="" class="coin__image">
+  <img src={{coin?.image}} alt="" class="coin__image">
   <div class="coin__price-info">
     <div class="current-price">
-      <span class="current-price__text">{{coin?.name}}</span>
-      <span class="current-price__number">{{coin?.currentPrice}}</span>
+      <span class="current-price__text">Current price</span>
+      <span class="current-price__number">{{coin?.currentPrice}} $</span>
     </div>
     <div class="price-change">
       <span class="price-change__text">Price change 24hs</span>
@@ -12,9 +12,10 @@
   </div>
   <h1 class="coin__name">{{coin?.name}}</h1>
   <div class="coin__extended-details">
-    <span class="extended-details__market-change">{{coin?.marketCapChange24Hs}}</span>
-    <span class="extended-details__market-percentage">{{coin?.marketCapChange24HsPercentage}}</span>
-    <span class="extended-details__supply">{{coin?.circulatingSupply}}</span>
+    <span class="extended-details__market-change">Market Cap Change 24hs: {{coin?.marketCapChange24Hs}}</span>
+    <span class="extended-details__market-percentage">Market Cap Change 24hs:
+      {{coin?.marketCapChange24HsPercentage}}</span>
+    <span class="extended-details__supply">Circulating supply: {{coin?.circulatingSupply}}</span>
   </div>
   <cr-button [isDisabled]="false" classModifier="buy">Buy</cr-button>
 </article>

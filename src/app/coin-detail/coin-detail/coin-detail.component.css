@@ -1,0 +1,73 @@
+.coin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.coin__image {
+  border: solid;
+  border-radius: 33px;
+  padding: 20px;
+  box-shadow: 10px 10px 3px 0px;
+}
+
+.coin__price-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+  border: solid #f239a4 0.1px;
+  border-radius: 33px;
+  padding: 10px 27px;
+  background: linear-gradient(359deg, #e9dde3, #f8f8f8);
+  overflow: hidden;
+  white-space: nowrap;
+  width: 292px;
+}
+
+.current-price__text,
+.price-change__text {
+  font-size: 12px;
+}
+
+.current-price,
+.price-change {
+  display: flex;
+  flex-direction: column;
+  font-weight: 100;
+}
+
+.current-price {
+  gap: 10px;
+}
+
+.current-price__number {
+  font-weight: bold;
+}
+
+.price-change__number {
+  align-self: center;
+  font-size: 23px;
+  color: #fff;
+  background: linear-gradient(45deg, #f239a4, #dc08e9);
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.coin__name,
+.coin__extended-details {
+  align-self: baseline;
+}
+
+.coin__extended-details {
+  display: flex;
+  flex-direction: column;
+  color: #b5b5b5;
+  font-size: 15px;
+}
+
+.coin__name {
+  font-size: 23px;
+  margin-bottom: 0;
+}
