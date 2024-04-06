@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { CoinListModule } from './coin-list/coin-list.module';
 import { CoinDetailModule } from './coin-detail/coin-detail.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     SharedModule,
     CoinListModule,
     CoinDetailModule,

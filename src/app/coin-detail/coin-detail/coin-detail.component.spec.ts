@@ -49,7 +49,7 @@ describe('CoinDetailComponent', () => {
   it('Then it should show an image with an alternative text "Logo of Btc"', fakeAsync(() => {
     const imageAlternativeText = 'Logo of Bitcoin';
 
-    coinService.coins$.next(coins);
+    coinService.coins.next(coins);
 
     fixture.detectChanges();
 
@@ -75,7 +75,7 @@ describe('CoinDetailComponent', () => {
 
     element = fixture.debugElement;
 
-    coinService.coins$.next(coins);
+    coinService.coins.next(coins);
 
     fixture.detectChanges();
 
