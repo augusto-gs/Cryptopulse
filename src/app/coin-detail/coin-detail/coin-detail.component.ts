@@ -20,8 +20,8 @@ export class CoinDetailComponent implements OnInit {
 
     this.coinService.loadCoin(coinId);
 
-    this.coinService.coin$.subscribe((course) => {
-      this.coin = course;
+    this.coinService.coin$.subscribe((coin) => {
+      this.coin = coin;
     });
   }
 }
