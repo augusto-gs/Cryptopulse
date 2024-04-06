@@ -8,8 +8,14 @@ import { coins } from '../data/coins';
 })
 export class CoinService {
   public coins$ = new BehaviorSubject<CoinStructure[]>([]);
+  public coin$ = new BehaviorSubject<CoinStructure | null>(null);
 
   public loadCoins(): void {
     this.coins$.next(coins);
+  }
+
+  public loadCoin(coinId: string): void {
+    const coin = coins.find((coin) => coin.id === coinId) ?? null;
+    this.coin$.next(coin);
   }
 }
