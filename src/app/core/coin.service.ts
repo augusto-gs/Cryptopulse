@@ -16,10 +16,12 @@ export class CoinService {
 
   constructor(private http: HttpClient) {}
 
-  public loadCoins(): void {
-    this.http.get<CoinStructure[]>(this.urlApi).subscribe((coins) => {
-      this.coins.next(coins);
-    });
+  public loadCoins(): Observable<CoinStructure[]> {
+    return this.http.get<CoinStructure[]>(this.urlApi).pipe(
+      tap((coins) => {
+        this.coins.next(coins);
+      }),
+    );
   }
 
   public loadCoin(coinId: string): void {
