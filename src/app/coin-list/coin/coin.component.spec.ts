@@ -4,6 +4,8 @@ import { CapitalizePipe } from 'src/app/shared/pipes/capitalize.pipe';
 import { coinMock } from 'src/app/mocks/coinMock';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('Given a CoinComponent', () => {
   let component: CoinComponent;
@@ -14,6 +16,7 @@ describe('Given a CoinComponent', () => {
     beforeEach(() => {
       TestBed.configureTestingModule({
         declarations: [CoinComponent, CapitalizePipe],
+        imports: [HttpClientTestingModule, RouterTestingModule],
       });
 
       fixture = TestBed.createComponent(CoinComponent);

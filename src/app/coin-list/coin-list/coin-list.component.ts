@@ -13,10 +13,8 @@ export class CoinListComponent implements OnInit {
   constructor(private coinService: CoinService) {}
 
   ngOnInit(): void {
-    this.coinService.coins$.subscribe((coins) => {
+    this.coinService.loadCoins().subscribe((coins) => {
       this.coins = coins;
     });
-
-    this.coinService.loadCoins();
   }
 }

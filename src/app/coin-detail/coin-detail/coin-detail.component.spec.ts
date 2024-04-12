@@ -8,6 +8,7 @@ import { By } from '@angular/platform-browser';
 import { coinMock } from 'src/app/mocks/coinMock';
 import { ActivatedRoute } from '@angular/router';
 import { coins } from 'src/app/data/coins';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('CoinDetailComponent', () => {
   let component: CoinDetailComponent;
@@ -29,7 +30,7 @@ describe('CoinDetailComponent', () => {
           },
         },
       ],
-      imports: [RouterTestingModule],
+      imports: [HttpClientTestingModule, RouterTestingModule],
     });
     fixture = TestBed.createComponent(CoinDetailComponent);
 
@@ -66,7 +67,7 @@ describe('CoinDetailComponent', () => {
     TestBed.configureTestingModule({
       declarations: [CoinDetailComponent, ButtonComponent],
       providers: [CoinService],
-      imports: [RouterTestingModule],
+      imports: [HttpClientTestingModule, RouterTestingModule],
     });
 
     fixture = TestBed.createComponent(CoinDetailComponent);
