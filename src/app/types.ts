@@ -3,7 +3,7 @@ export interface CoinStructure {
   name: string;
   symbol: string;
   image: string;
-  currentPrice: number;
+  current_price: number;
   priceChange24Hs: number;
   marketCapChange24Hs: number;
   marketCapChange24HsPercentage: number;
