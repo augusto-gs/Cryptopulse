@@ -7,15 +7,15 @@
     </div>
     <div class="price-change">
       <span class="price-change__text">Price change 24hs</span>
-      <span class="price-change__number">{{coin?.priceChange24Hs}}</span>
+      <span class="price-change__number">{{coin?.price_change_24h}}</span>
     </div>
   </div>
   <h1 class="coin__name">{{coin?.name}}</h1>
   <div class="coin__extended-details">
-    <span class="extended-details__market-change">Market Cap Change 24hs: {{coin?.marketCapChange24Hs}}</span>
+    <span class="extended-details__market-change">Market Cap Change 24hs: {{coin?.market_cap_change_24h}}</span>
     <span class="extended-details__market-percentage">Market Cap Change 24hs:
-      {{coin?.marketCapChange24HsPercentage}}</span>
-    <span class="extended-details__supply">Circulating supply: {{coin?.circulatingSupply}}</span>
+      {{coin?.market_cap_change_percentage_24h}}</span>
+    <span class="extended-details__supply">Circulating supply: {{coin?.circulating_supply}}</span>
   </div>
   <cr-button [isDisabled]="false" classModifier="buy">Buy</cr-button>
 </article>

@@ -18,9 +18,9 @@ export class CoinDetailComponent implements OnInit {
   ngOnInit(): void {
     const { coinId } = this.route.snapshot.params as { coinId: string };
 
-    this.coinService.loadCoin(coinId);
+    this.coinService.loadCoin(coinId).subscribe();
 
-    this.coinService.coin$.subscribe((coin) => {
+    this.coinService.coin.subscribe((coin) => {
       this.coin = coin;
     });
   }
