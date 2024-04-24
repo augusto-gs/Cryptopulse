@@ -7,8 +7,8 @@ export const coinMock: CoinStructure = {
   image:
     'https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1696501400',
   current_price: 43352,
-  priceChange24Hs: 0,
-  marketCapChange24Hs: 0,
-  marketCapChange24HsPercentage: 0,
-  circulatingSupply: 0,
+  price_change_24h: 0,
+  market_cap_change_24h: 0,
+  market_cap_change_percentage_24h: 0,
+  circulating_supply: 0,
 };

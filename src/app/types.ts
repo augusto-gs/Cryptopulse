@@ -4,8 +4,8 @@ export interface CoinStructure {
   symbol: string;
   image: string;
   current_price: number;
-  priceChange24Hs: number;
-  marketCapChange24Hs: number;
-  marketCapChange24HsPercentage: number;
-  circulatingSupply: number;
+  price_change_24h: number;
+  market_cap_change_24h: number;
+  market_cap_change_percentage_24h: number;
+  circulating_supply: number;
 }
