@@ -7,13 +7,18 @@ import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { coinMock } from 'src/app/mocks/coinMock';
 import { ActivatedRoute } from '@angular/router';
-import { coins } from 'src/app/data/coins';
+import {
+  HttpClientTestingModule,
+  HttpTestingController,
+} from '@angular/common/http/testing';
+import { mockCoins } from 'src/app/mocks/coinsMock';
 
 describe('CoinDetailComponent', () => {
   let component: CoinDetailComponent;
   let fixture: ComponentFixture<CoinDetailComponent>;
   let element: DebugElement;
   let coinService: CoinService;
+  let testController: HttpTestingController;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -29,9 +34,10 @@ describe('CoinDetailComponent', () => {
           },
         },
       ],
-      imports: [RouterTestingModule],
+      imports: [HttpClientTestingModule, RouterTestingModule],
     });
     fixture = TestBed.createComponent(CoinDetailComponent);
+    testController = TestBed.inject(HttpTestingController);
 
     coinService = TestBed.inject(CoinService);
 
@@ -49,7 +55,13 @@ describe('CoinDetailComponent', () => {
   it('Then it should show an image with an alternative text "Logo of Btc"', fakeAsync(() => {
     const imageAlternativeText = 'Logo of Bitcoin';
 
-    coinService.coins$.next(coins);
+    coinService.coins.next(mockCoins);
+
+    const mockReq = testController.expectOne(
+      'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false/',
+    );
+
+    mockReq.flush(Object.values(mockCoins));
 
     fixture.detectChanges();
 
@@ -66,7 +78,7 @@ describe('CoinDetailComponent', () => {
     TestBed.configureTestingModule({
       declarations: [CoinDetailComponent, ButtonComponent],
       providers: [CoinService],
-      imports: [RouterTestingModule],
+      imports: [HttpClientTestingModule, RouterTestingModule],
     });
 
     fixture = TestBed.createComponent(CoinDetailComponent);
@@ -75,7 +87,13 @@ describe('CoinDetailComponent', () => {
 
     element = fixture.debugElement;
 
-    coinService.coins$.next(coins);
+    coinService.coins.next(mockCoins);
+
+    const mockReq = testController.expectOne(
+      'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false/',
+    );
+
+    mockReq.flush(Object.values(mockCoins));
 
     fixture.detectChanges();
 
