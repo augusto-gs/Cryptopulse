@@ -7,7 +7,6 @@ import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { coinMock } from 'src/app/mocks/coinMock';
 import { ActivatedRoute } from '@angular/router';
-import { coins } from 'src/app/data/coins';
 import {
   HttpClientTestingModule,
   HttpTestingController,
@@ -88,7 +87,13 @@ describe('CoinDetailComponent', () => {
 
     element = fixture.debugElement;
 
-    coinService.coins.next(coins);
+    coinService.coins.next(mockCoins);
+
+    const mockReq = testController.expectOne(
+      'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false/',
+    );
+
+    mockReq.flush(Object.values(mockCoins));
 
     fixture.detectChanges();
 
