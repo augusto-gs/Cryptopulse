@@ -19,6 +19,8 @@ describe('CoinDetailComponent', () => {
   let element: DebugElement;
   let coinService: CoinService;
   let testController: HttpTestingController;
+  const apiUrl =
+    'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=1000&page=1&sparkline=false/';
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -57,15 +59,13 @@ describe('CoinDetailComponent', () => {
 
     coinService.coins.next(mockCoins);
 
-    const mockReq = testController.expectOne(
-      'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false/',
-    );
+    const mockReq = testController.expectOne(apiUrl);
 
     mockReq.flush(Object.values(mockCoins));
 
     fixture.detectChanges();
 
-    const coinLogo = element.query(By.css('img'));
+    const coinLogo = element.query(By.css('.coin__image'));
 
     expect(coinLogo.nativeElement.alt).toBe(imageAlternativeText);
   }));
@@ -89,15 +89,13 @@ describe('CoinDetailComponent', () => {
 
     coinService.coins.next(mockCoins);
 
-    const mockReq = testController.expectOne(
-      'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false/',
-    );
+    const mockReq = testController.expectOne(apiUrl);
 
     mockReq.flush(Object.values(mockCoins));
 
     fixture.detectChanges();
 
-    const coinLogo = element.query(By.css('img'));
+    const coinLogo = element.query(By.css('.coin__image'));
 
     expect(coinLogo.nativeElement.alt).toBe(imageAlternativeText);
   }));

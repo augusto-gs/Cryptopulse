@@ -10,6 +10,8 @@ import { mockCoins } from '../mocks/coinsMock';
 describe('Given a CoinService', () => {
   let service: CoinService;
   let testController: HttpTestingController;
+  const apiUrl =
+    'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=1000&page=1&sparkline=false/';
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -27,9 +29,7 @@ describe('Given a CoinService', () => {
         expect(coins).toEqual(mockCoins);
       });
 
-      const mockReq = testController.expectOne(
-        'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false/',
-      );
+      const mockReq = testController.expectOne(apiUrl);
       mockReq.flush(Object.values(mockCoins));
       expect(service.coins.getValue()).toEqual(mockCoins);
     });
