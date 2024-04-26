@@ -1,3 +1,5 @@
+<a [routerLink]="['/coins']"><img alt="back logo" src="../../../assets/back_logo.svg" height="36" width="36"
+    class="back_logo" /></a>
 <article class="coin">
   <img src={{coin?.image}} alt="Logo of {{coin?.name}}" class="coin__image">
   <div class="coin__price-info">
@@ -17,5 +19,6 @@
       {{coin?.market_cap_change_percentage_24h}}</span>
     <span class="extended-details__supply">Circulating supply: {{coin?.circulating_supply}}</span>
   </div>
-  <cr-button [isDisabled]="false" classModifier="buy">Buy</cr-button>
+  <cr-button [isDisabled]="false" classModifier="buy"><a
+      href="https://www.binance.com/en/crypto/buy">Buy</a></cr-button>
 </article>

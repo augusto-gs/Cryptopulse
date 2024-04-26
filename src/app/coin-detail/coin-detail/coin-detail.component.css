@@ -72,6 +72,11 @@
   margin-bottom: 0;
 }
 
+.back_logo {
+  position: absolute;
+  top: 10px;
+}
+
 @media (width >=400px) {
   .coin__price-info {
     width: 100%;
